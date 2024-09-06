@@ -1,4 +1,4 @@
-## VERITAS-IT-Server conventions
+## VERITAS-IT-Server convention
 
 
 | 타입           | 설명            |
