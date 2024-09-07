@@ -1,0 +1,44 @@
+Server:
+  port: 8080
+
+server:
+  servlet:
+    context-path: /api
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    hikari:
+      maximum-pool-size: 2000
+      max-lifetime: 45000
+      idle-timeout: 45000
+
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: false
+    devtools:
+      restart:
+        enabled: true
+        log-condition-evaluation-delta: false
+    mvc:
+      pathmatch:
+        matching-strategy: ant_path_matcher
+    web:
+      resources:
+        add-mappings: false
+    autoconfigure:
+      exclude: org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
+
+
+    logging:
+      level:
+        root: INFO
+        com.example.ssuitfestival: debug
+        org.springframework.web.servlet.DispatcherServlet: DEBUG
