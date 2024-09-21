@@ -1,7 +1,5 @@
 package com.example.ssuitfestival.entity;
 
-import com.example.ssuitfestival.entity.enums.MenuStatus;
-import com.example.ssuitfestival.entity.enums.Team;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -34,13 +32,13 @@ public class Menu {
     @Column(name = "imgUrl", nullable = false, length = 100)
     private String imgUrl;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "menuStatus", nullable = false)
-    private MenuStatus menuStatus;
+    @Basic
+    @Column(name = "isAvail", nullable = false)
+    private Integer isAvail;
 
-    @Enumerated(EnumType.STRING)
+    @Basic
     @Column(name = "team", nullable = false)
-    private Team team;
+    private String team;
 
     // OrderMenu와의 1:N 관계
     @OneToMany(mappedBy = "menu", cascade = CascadeType.ALL)
