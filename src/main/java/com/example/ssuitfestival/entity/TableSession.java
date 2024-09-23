@@ -9,7 +9,8 @@ import java.sql.Timestamp;
 @Builder
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@RequiredArgsConstructor
+@Data
 public class TableSession {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

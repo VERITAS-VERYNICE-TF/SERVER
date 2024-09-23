@@ -7,7 +7,8 @@ import lombok.*;
 @Builder
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@RequiredArgsConstructor
+@Data
 public class OrderMenu {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

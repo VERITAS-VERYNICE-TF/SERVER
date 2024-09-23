@@ -9,7 +9,8 @@ import java.util.Collection;
 @Builder
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@RequiredArgsConstructor
+@Data
 public class Menu {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

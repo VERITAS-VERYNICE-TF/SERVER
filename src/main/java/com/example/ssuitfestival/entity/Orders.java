@@ -10,7 +10,8 @@ import java.util.Collection;
 @Builder
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@RequiredArgsConstructor
+@Data
 @Table(name = "orders")
 public class Orders {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
