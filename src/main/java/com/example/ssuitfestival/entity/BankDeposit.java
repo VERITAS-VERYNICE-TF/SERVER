@@ -13,8 +13,8 @@ import java.sql.Timestamp;
 public class BankDeposit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "id", nullable = false)
-    private Long id;
+    @Column(name = "idx", nullable = false)
+    private Integer idx;
 
     @Basic
     @Column(name = "name", nullable = false, length = 50)
@@ -35,4 +35,12 @@ public class BankDeposit {
     @Basic
     @Column(name = "updatedAt", nullable = true)
     private Timestamp updatedAt;
+
+    @Basic
+    @Column(name = "OrderId", nullable = true)
+    private Integer orderId;
+
+    @Basic
+    @Column(name = "memo", nullable = true)
+    private String memo;
 }
